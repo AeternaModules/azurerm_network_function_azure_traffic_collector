@@ -1,3 +1,7 @@
+output "network_function_azure_traffic_collectors_id" {
+  description = "Map of id values across all network_function_azure_traffic_collectors, keyed the same as var.network_function_azure_traffic_collectors"
+  value       = { for k, v in azurerm_network_function_azure_traffic_collector.network_function_azure_traffic_collectors : k => v.id }
+}
 output "network_function_azure_traffic_collectors_collector_policy_ids" {
   description = "Map of collector_policy_ids values across all network_function_azure_traffic_collectors, keyed the same as var.network_function_azure_traffic_collectors"
   value       = { for k, v in azurerm_network_function_azure_traffic_collector.network_function_azure_traffic_collectors : k => v.collector_policy_ids }
